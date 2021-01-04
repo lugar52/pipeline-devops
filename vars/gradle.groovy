@@ -23,7 +23,7 @@ def call(){
 
 			withSonarQubeEnv('Sonar-Server') 
 			{ 
-                bat start "${scannerHome}\\bin\\sonar-scanner -Dsonar.projectKey=ejemplo-gradle -Dsonar.java.binaries=build"
+                bat start "${scannerHome}\\bin\\Sonar-Scanner -Dsonar.projectKey=ejemplo-gradle -Dsonar.java.binaries=build"
 			}
 		}
     }
