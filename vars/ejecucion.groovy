@@ -13,11 +13,14 @@ def call(){
             {
                 script 
                 {
-                    println 'Herramientas de ejecucion seleccionadas: ' + params.herramientas
-                    //env.SUMMARY = "'[Luis Garrido] ${env.JOB_NAME} [${params.herramientas}] [Ejecucion exitosa]'"
+                  println 'Herramientas de ejecucion seleccionadas: ' + params.herramientas
 
-                    def pipe = load "${params.herramientas}.groovy"
-                    pipe.call()
+                  if (params.buildtool == 'gradle') {
+                    gradle.call()
+                  } else {
+                    maven.call())
+                  }
+
                 }
             }
         }
