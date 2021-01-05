@@ -21,10 +21,10 @@ def call(String miparam){
 
         stage('Sonar') 
         {
-            //env.TAREA =  env.STAGE_NAME
+            env.TAREA =  env.STAGE_NAME
             stage('SonarQube analysis') 
             {
-                //env.TAREA =  env.STAGE_NAME
+                env.TAREA =  env.STAGE_NAME
                 
                 def scannerHome = tool 'Sonar-Scanner';
 
@@ -34,7 +34,7 @@ def call(String miparam){
                 }
             }
         }
-        
+
         run.call()
         rest.call()
         nexus.call()
