@@ -11,7 +11,7 @@ def call(String miparam){
 
     // `it` is the current element, while `i` is the index
     list.eachWithIndex { it, i ->
-        println list(i)
+        println list[i]
         // println "$i: $it"
 
     }
