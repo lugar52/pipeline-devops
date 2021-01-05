@@ -4,7 +4,7 @@
 	ejecucion.call()
 */
 
-def call(string miparam){
+def call(String miparam){
 
         println 'Estoy en maven.groovy: ' + miparam
         stage('compile_code'){

@@ -4,7 +4,7 @@
 	ejecucion.call()
 */
 
-def call(string miparam){
+def call(String miparam){
   
     println 'Valor en gradle.groovy: ' + miparam
     stage('Build & test') 
