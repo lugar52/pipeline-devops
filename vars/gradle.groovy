@@ -18,6 +18,9 @@ def call(String miparam){
         println "El valor ingresado es vacio, se procesan todos los stages: " 
         build.call()
         // sonar.call()
+        sleep(10) {
+            // on interrupt do
+        }
 
     stage('Sonar') 
 	{
