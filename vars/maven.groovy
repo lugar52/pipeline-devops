@@ -4,8 +4,9 @@
 	ejecucion.call()
 */
 
-def call(){
+def call(string miparam){
 
+        println 'Estoy en maven.groovy: ' + miparam
         stage('compile_code'){
                 script {
                         env.TAREA = env.STAGE_NAME
