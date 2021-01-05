@@ -14,21 +14,6 @@ def call(String miparam){
         
         println "$i: $it"
 
-        switch($it) { 
-            case list(0): 
-                println "$it"
-            case list(1): 
-                println "$it"
-            case list(2): 
-                println "$it"
-            case list(3): 
-                println "$it"
-            case list(4): 
-                println "$it"
-            case list(5): 
-                println "$it"
-            default:
-        } 
     }
 
     stage('Build & test') 
