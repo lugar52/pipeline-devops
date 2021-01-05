@@ -4,8 +4,9 @@
 	ejecucion.call()
 */
 
-def call(){
+def call(string miparam){
   
+    println 'Valor en gradle.groovy: ' + miparam
     stage('Build & test') 
 	{
         env.TAREA = env.STAGE_NAME
