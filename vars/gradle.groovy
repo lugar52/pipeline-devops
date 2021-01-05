@@ -7,7 +7,7 @@
 def call(String miparam){
 
     
-    def list = ['Build','test','Sonar', 'Run', 'Rest', 'Nexus' ]
+    def list = ['build','test','Sonar', 'Run', 'Rest', 'Nexus' ]
 
     // `it` is the current element, while `i` is the index
 
@@ -23,6 +23,7 @@ def call(String miparam){
 			
          case list[0]: 
             println("The value of a is Build"); 
+            build.call()
             break; 
          case list[1]: 
             println("The value of a is test"); 
@@ -48,11 +49,11 @@ def call(String miparam){
 
     }
 
-    stage('Build & test') 
-	{
-        env.TAREA = env.STAGE_NAME
-        bat "gradlew clean build"
-    }
+    // stage('Build & test') 
+	// {
+    //     env.TAREA = env.STAGE_NAME
+    //     bat "gradlew clean build"
+    // }
 
     stage('Sonar') 
 	{
