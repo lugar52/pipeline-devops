@@ -3,7 +3,7 @@ def call(){
   pipeline {
     agent any
 
-    parameters { choice(name: 'herramientas', choices: ['gradle', 'maven'], description: '') }
+    parameters { choice(name: 'buildtool', choices: ['gradle', 'maven'], description: '') }
      //string(name: 'stage', defaultValue: '', descripcion: 'taller devops')
 
     stages 
@@ -14,13 +14,13 @@ def call(){
             {
                 script 
                 {
-                  println 'Herramientas de ejecucion seleccionadas: ' + params.herramientas
+                  println 'Herramientas de ejecucion seleccionadas: ' + params.buildtool
                   println 'Valor param.stage: ' + params.stage
 
                   if (params.buildtool == 'gradle') {
                     gradle.call(params.stage)
                   } else {
-                    maven.call()
+                    maven.call(params.stage)
                   }
 
                 }
