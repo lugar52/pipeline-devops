@@ -5,8 +5,31 @@
 */
 
 def call(String miparam){
-  
-    println 'Valor en gradle.groovy: ' + miparam
+
+    
+    def list = ['Build','test','Sonar', 'Run', 'Rest', 'Nexus' ]
+
+    list.eachWithIndex { it, i 
+        // `it` is the current element, while `i` is the index
+        println "$i: $it"
+
+        switch($it) { 
+            case list(0): 
+                println "$it"
+            case list(1): 
+                println "$it"
+            case list(2): 
+                println "$it"
+            case list(3): 
+                println "$it"
+            case list(4): 
+                println "$it"
+            case list(5): 
+                println "$it"
+            default:
+        } 
+    }
+
     stage('Build & test') 
 	{
         env.TAREA = env.STAGE_NAME
