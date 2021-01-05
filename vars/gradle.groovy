@@ -14,8 +14,8 @@ def call(String miparam){
     
     String[] misStage;
     str = miparam.split(';');
-    if (miparam == ';') {
-        println "El valor ingresado es vacio, se procesan todos los stages: " + str[i]
+    if (miparam == ";") {
+        println "El valor ingresado es vacio, se procesan todos los stages: " 
         build.call()
         sonar.call()
         run.call()
