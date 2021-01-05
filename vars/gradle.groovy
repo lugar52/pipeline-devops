@@ -6,52 +6,60 @@
 
 def call(String miparam){
 
-    
-    def list = ['build','test','Sonar', 'Run', 'Rest', 'Nexus' ]
+    println "Valor Ingresado: " + miparam
+    def list = ['build','test','sonar', 'run', 'rest', 'nexus' ]
 
     // `it` is the current element, while `i` is the index
 
     
     String[] misStage;
     str = miparam.split(';');
-
-    str.eachWithIndex { it, i ->
-        println str[i]
-        switch(str[i]) {            
-         //There is case statement defined for 4 cases 
-         // Each case statement section has a break condition to exit the loop 
-			
-         case list[0]: 
-            println("The value of a is Build"); 
-            build.call()
-            break; 
-         case list[1]: 
-            println("The value of a is test"); 
-            build.call()
-            break; 
-         case list[2]: 
-            println("The value of a is Sonar"); 
-            sonar.call()
-            break; 
-         case list[3]: 
-            println("The value of a is Run"); 
-            run.call()
-            break; 
-        case list[4]: 
-            println("The value of a is Rest"); 
-            rest.call()
-            break; 
-        case list[5]: 
-            println("The value of a is Nexus"); 
-            nexus.call()
-            break; 
-        default: 
-            println("The value is unknown"); 
-            break; 
-      }
-
-
-
+    if (str.empty) {
+        println "El valor ingresado es vacio, se procesan todos los stages: " + str[i]
+        build.call()
+        sonar.call()
+        sonar.call()
+        run.call()
+        rest.call()
+        nexus.call()
+    }
+    else {
+        str.eachWithIndex { it, i ->
+            println "Stage a procesar: " + str[i]
+            switch(str[i]) {            
+                //There is case statement defined for 4 cases 
+                // Each case statement section has a break condition to exit the loop 
+                    
+                case list[0]: 
+                    
+                    build.call()
+                    break; 
+                case list[1]: 
+                    
+                    build.call()
+                    break; 
+                case list[2]: 
+                    
+                    sonar.call()
+                    break; 
+                case list[3]: 
+                    
+                    run.call()
+                    break; 
+                case list[4]: 
+                    
+                    rest.call()
+                    break; 
+                case list[5]: 
+                    
+                    nexus.call()
+                    break; 
+                default: 
+                    println("The value is unknown"); 
+                    break; 
+            }
+        }
+        
     }
 
     // stage('Build & test') 
