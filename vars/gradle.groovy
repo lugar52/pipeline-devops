@@ -10,9 +10,41 @@ def call(String miparam){
     def list = ['Build','test','Sonar', 'Run', 'Rest', 'Nexus' ]
 
     // `it` is the current element, while `i` is the index
-    list.eachWithIndex { it, i ->
-        println list[i]
-        // println "$i: $it"
+
+    
+    String[] misStage;
+    str = miparam.split(';');
+
+    str.eachWithIndex { it, i ->
+        println str[i]
+        switch(str[i]) {            
+         //There is case statement defined for 4 cases 
+         // Each case statement section has a break condition to exit the loop 
+			
+         case list[0]: 
+            println("The value of a is Build"); 
+            break; 
+         case list[1]: 
+            println("The value of a is test"); 
+            break; 
+         case list[2]: 
+            println("The value of a is Sonar"); 
+            break; 
+         case list[3]: 
+            println("The value of a is Run"); 
+            break; 
+        case list[4]: 
+            println("The value of a is Rest"); 
+            break; 
+        case list[5]: 
+            println("The value of a is Nexus"); 
+            break; 
+        default: 
+            println("The value is unknown"); 
+            break; 
+      }
+
+
 
     }
 
