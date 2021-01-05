@@ -16,7 +16,7 @@ def call(){
                 {
                   println 'Herramientas de ejecucion seleccionadas: ' + params.herramientas
 
-                  if (params.buildtool == 'gradle') {
+                  if (params.herramientas == 'gradle') {
                     gradle.call()
                   } else {
                     maven.call()
