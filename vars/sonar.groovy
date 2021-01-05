@@ -1,11 +1,11 @@
 def call(){ 
     stage('Sonar') 
 	{
-        env.TAREA =  env.STAGE_NAME
+        //env.TAREA =  env.STAGE_NAME
 		stage('SonarQube analysis') 
 		{
-            env.TAREA =  env.STAGE_NAME
-		    // Coresponde a lo que se configuro en tool conffiguration
+            //env.TAREA =  env.STAGE_NAME
+		    
 			def scannerHome = tool 'Sonar-Scanner';
 
 			withSonarQubeEnv('Sonar-Server') 
