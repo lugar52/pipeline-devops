@@ -9,8 +9,9 @@ def call(String miparam){
     
     def list = ['Build','test','Sonar', 'Run', 'Rest', 'Nexus' ]
 
-    list.eachWithIndex { it, i 
-        // `it` is the current element, while `i` is the index
+    // `it` is the current element, while `i` is the index
+    list.eachWithIndex { it, i ->
+        
         println "$i: $it"
 
         switch($it) { 
