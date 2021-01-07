@@ -17,7 +17,18 @@ def call(String miparam){
     if (miparam == ";") {
         println "El valor ingresado es vacio, se procesan todos los stages: " 
         build.call()
-        sonar.call()
+        // sonar.call()
+
+         stage('Sonar') {
+                stage('SonarQube analysis') {
+                    // Coresponde a lo que se configuro en tool conffiguration
+                def scannerHome = tool 'Sonar-Scanner';
+                    
+                withSonarQubeEnv('Sonar-Server') { 
+                    bat "${scannerHome}\\bin\\sonar-scanner -Dsonar.projectKey=ejemplo-gradle -Dsonar.java.binaries=build"
+                }
+                }
+        }
 
         run.call()
         rest.call()
