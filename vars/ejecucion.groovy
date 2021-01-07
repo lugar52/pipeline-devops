@@ -15,7 +15,7 @@ def call(){
                 script 
                 {
                   println 'Herramientas de ejecucion seleccionadas: ' + params.buildtool
-                  println 'Valor param.stage: ' + params.stage
+                  //println 'Valor param.stage: ' + params.stage
                   
 
                     if (params.buildtool == 'gradle') {
