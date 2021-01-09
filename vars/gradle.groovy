@@ -28,7 +28,7 @@ def call(String miparam){
     }
     else {
         str.eachWithIndex { it, i ->
-            println "Stage a procesar: " + str[i] + 'it: ' + it
+            println "Stage a procesar: " + str[i] + ' it: ' + it
             switch(str[i]) {            
                 //There is case statement defined for 4 cases 
                 // Each case statement section has a break condition to exit the loop 
