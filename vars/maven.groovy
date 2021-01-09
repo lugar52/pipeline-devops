@@ -18,8 +18,8 @@ def call(String miparam){
                 var3 = "()"
                 varStage = var2 
                 println "stmaven.${var2}${var3}"
-                stgradle.compile_code("a")
-                // Stmaven."${var2}${var3}"
+                // stgradle.compile_code()
+                stgradle."${var2}${var3}"
         }
     }
     else {
