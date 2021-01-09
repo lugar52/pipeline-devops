@@ -12,14 +12,14 @@ def call(String miparam){
         println "Se procesa el arreglo: list" 
         list.eachWithIndex { it, i -> 
             println "Stage a procesar: " + list[i] + ' it: ' + it    
-                stages."${it}"()
+                stagesMaven."${it}"()
         }
     }
     else {
         println "Se procesa el arreglo: str" 
         str.eachWithIndex { it, i ->
             println "Stage a procesar: " + str[i] + ' it: ' + it
-                stages."${it}"()
+                stagesMaven."${it}"()
         }
     }
 }
