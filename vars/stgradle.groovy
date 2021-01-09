@@ -59,6 +59,8 @@ def otro() {
 
 }
 
+/////////////  STAGES MAVEN    //////////////
+
 def compile_code(){
     stage('compile_code'){
         script {
