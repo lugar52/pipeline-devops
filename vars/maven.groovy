@@ -1,6 +1,7 @@
 def call(String miparam){
 
-    println "Valor Ingresado: " + miparam
+    println "Valor Ingresado: " 
+    figlet miparam
     def list = ['compile_code','test_code','jar_code', 'sonarQube', 'uploadNexus']
 
     // `it` is the current element, while `i` is the index
@@ -17,7 +18,8 @@ def call(String miparam){
                 var3 = "()"
                 varStage = var2 
                 println "stmaven.${var2}${var3}"
-                Stmaven."${var2}${var3}"
+                stmaven.compile.code()
+                // Stmaven."${var2}${var3}"
         }
     }
     else {
