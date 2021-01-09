@@ -11,8 +11,16 @@ def call(String miparam){
     if (miparam == ";") {
         println "El valor ingresado es vacio, se procesan todos los stages: " 
         list.eachWithIndex { it, i -> 
-                varStage "Stmaven."+it+"()" 
-                println varStage
+                println "Stmaven."
+                var1 = "Stmaven."
+                println it
+                var1 = it
+                println "()"
+                var3 = "()"
+                println var1 + var2 + var3
+
+                varStage = "Stmaven."+it+"()" 
+                println "esta es la stege: " + varStage
         }
     }
     else {
