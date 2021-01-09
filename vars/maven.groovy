@@ -2,7 +2,7 @@ def call(String miparam){
 
     println "Valor Ingresado: " + miparam
     
-    list = ['compile_code','test_code','jar_code','sonarQube','uploadNexus']
+    def list = ['compile_code','test_code','jar_code','sonarQube','uploadNexus']
 
     // `it` is the current element, while `i` is the index
         
@@ -11,7 +11,7 @@ def call(String miparam){
     if (miparam == ";") {
         println "Se procesa el arreglo: list" 
         list.eachWithIndex { it, i -> 
-            println "Stage a procesar: " + str[i] + ' it: ' + it    
+            println "Stage a procesar: " + list[i] + ' it: ' + it    
                 stages."${it}"()
         }
     }
