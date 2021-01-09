@@ -1,50 +1,58 @@
-/*
-	forma de invocación de método call:
-	def ejecucion = load 'script.groovy'
-	ejecucion.call()
-*/
-
 def call(String miparam){
 
-        println 'Estoy en maven.groovy: ' + miparam
-        stage('compile_code'){
-                script {
-                        env.TAREA = env.STAGE_NAME
-                }
-                
-                bat './mvnw.cmd clean compile -e'
-        }
-        stage('test_code'){
-                script {
-                        env.TAREA = env.STAGE_NAME
-                }
+    println "Valor Ingresado: " + miparam
+    def list = ['compile_code','test_code','jar_code', 'sonarQube', 'uploadNexus']
 
-                bat './mvnw.cmd clean test -e'
-        }
-        stage('jar_code'){
-                script {
-                        env.TAREA = env.STAGE_NAME
-                }
+    // `it` is the current element, while `i` is the index
 
-                bat './mvnw.cmd clean package -e'
+    
+    String[] misStage;
+    str = miparam.split(';');
+    if (miparam == ";") {
+        println "El valor ingresado es vacio, se procesan todos los stages: " 
+        list.eachWithIndex { it, i -> 
+                println Stmaven.+it+"()"
         }
-        stage('sonarQube') {
-                script {
-                        env.TAREA = env.STAGE_NAME
-                }
+    }
+    else {
+        str.eachWithIndex { it, i ->
+            println "Stage a procesar: " + str[i] + ' it: ' + it
+            switch(str[i]) {            
+                //There is case statement defined for 4 cases 
+                // Each case statement section has a break condition to exit the loop 
+                    
+                case list[0]: 
+                    
+                    stgradle.build()
+                    break; 
+                case list[1]: 
+                    
+                    stgradle.build()
+                    break; 
+                case list[2]: 
+                    
+                    stgradle.sonar()
+                    break; 
+                case list[3]: 
+                    
+                    stgradle.running()
+                    break; 
+                case list[4]: 
+                    
+                    stgradle.rest()
+                    break; 
+                case list[5]: 
+                    
+                    stgradle.nexus()
+                    break; 
+                default: 
+                    println("The value is unknown"); 
+                    break; 
+            }
+        }
+        
+    }
 
-                withSonarQubeEnv(installationName: 'Sonar-Server') 
-                { 
-                        bat './mvnw.cmd org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar'
-                }
-        }
-        stage('uploadNexus'){
-                script {
-                        env.TAREA = env.STAGE_NAME
-                }
-
-                nexusPublisher nexusInstanceId: 'nexus', nexusRepositoryId: 'test-nexus', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: 'jar', filePath: 'C:\\Users\\Luis Garrido\\Desktop\\Devops\\ejemplo-maven\\build\\DevOpsUsach2020-0.0.1.jar']], mavenCoordinate: [artifactId: 'DevOpsUsach2020', groupId: 'com.devopsusach2020', packaging: 'jar', version: '0.0.1']]]
-        }
 }
 
 return this;
