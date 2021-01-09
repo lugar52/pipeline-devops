@@ -3,6 +3,7 @@
 	def ejecucion = load 'script.groovy'
 	ejecucion.call()
 */
+import stages.*
 
 def call(String miparam){
 
