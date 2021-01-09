@@ -15,9 +15,9 @@ def call(String miparam){
                 var1 = "stmaven."
                 var2 = it
                 var3 = "()"
-                varStage = var2 + var3
-                println "stmaven.${varStage}"
-                Stmaven."${varStage}"
+                varStage = var2 
+                println "stmaven.${var2}${var3}"
+                Stmaven."${var2}${var3}"
         }
     }
     else {
