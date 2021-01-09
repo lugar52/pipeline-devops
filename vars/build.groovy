@@ -1,4 +1,3 @@
-package stages.
 
 def call(){ 
     stage('Build & test') 
@@ -8,6 +7,4 @@ def call(){
         bat "gradlew clean build"
     }
 }
-
-return this;
 
