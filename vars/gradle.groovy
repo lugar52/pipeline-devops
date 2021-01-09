@@ -18,13 +18,13 @@ def call(String miparam){
         println "El valor ingresado es vacio, se procesan todos los stages: " 
         stgradle.build()
 
-        stgradle.sonar.call()
+        stgradle.sonar()
 
-        stgradle.run.call()
+        stgradle.run()
 
-        stgradle.rest.call()
+        stgradle.rest()
 
-        stgradle.nexus.call()
+        stgradle.nexus()
     }
     else {
         str.eachWithIndex { it, i ->
@@ -35,27 +35,27 @@ def call(String miparam){
                     
                 case list[0]: 
                     
-                    stgradle.build.call()
+                    stgradle.build()
                     break; 
                 case list[1]: 
                     
-                    stgradle.build.call()
+                    stgradle.build()
                     break; 
                 case list[2]: 
                     
-                    stgradle.sonar.call()
+                    stgradle.sonar()
                     break; 
                 case list[3]: 
                     
-                    stgradle.run.call()
+                    stgradle.run()
                     break; 
                 case list[4]: 
                     
-                    stgradle.rest.call()
+                    stgradle.rest()
                     break; 
                 case list[5]: 
                     
-                    stgradle.nexus.call()
+                    stgradle.nexus()
                     break; 
                 default: 
                     println("The value is unknown"); 
