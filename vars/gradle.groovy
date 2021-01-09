@@ -3,7 +3,7 @@
 	def ejecucion = load 'script.groovy'
 	ejecucion.call()
 */
-import gradle.*
+import gra.*
 
 def call(String miparam){
 
@@ -17,7 +17,7 @@ def call(String miparam){
     str = miparam.split(';');
     if (miparam == ";") {
         println "El valor ingresado es vacio, se procesan todos los stages: " 
-        gradle.build.call()
+        build.call()
 
         sonar.call()
 
