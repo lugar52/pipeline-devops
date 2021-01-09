@@ -5,11 +5,10 @@ def call(String miparam){
     def list = ['compile_code','test_code','jar_code','sonarQube','uploadNexus']
 
     // `it` is the current element, while `i` is the index
-    char[] charsToTrim = {' '};
-    
+        
     String[] misStage;
     str = miparam.split(';');
-    Instr = miparam.Trim(charsToTrim)
+    Instr = miparam.Trim(' ')
     if (Instr == ";") {
         println "El valor ingresado es vacio, se procesan todos los stages: " 
         list.eachWithIndex { it, i -> 
