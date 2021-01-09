@@ -7,15 +7,16 @@ def call(String miparam){
     // `it` is the current element, while `i` is the index
         
     String[] misStage;
-
+    str = miparam.split(';')
     if (miparam.Trim == ";") {
-        println "El valor ingresado es vacio, se procesan todos los stages: " 
+        println "Se procesa el arreglo: list" 
         list.eachWithIndex { it, i -> 
             println "Stage a procesar: " + str[i] + ' it: ' + it    
                 stages."${it}"()
         }
     }
     else {
+        println "Se procesa el arreglo: str" 
         str.eachWithIndex { it, i ->
             println "Stage a procesar: " + str[i] + ' it: ' + it
                 stages."${it}"()
