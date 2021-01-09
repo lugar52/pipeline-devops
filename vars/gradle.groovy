@@ -3,7 +3,6 @@
 	def ejecucion = load 'script.groovy'
 	ejecucion.call()
 */
-import gra.*
 
 def call(String miparam){
 
@@ -19,13 +18,13 @@ def call(String miparam){
         println "El valor ingresado es vacio, se procesan todos los stages: " 
         stgradle.build("a")
 
-        sonar.call()
+        stgradle.sonar.call()
 
-        run.call()
+        stgradle.run.call()
 
-        rest.call()
+        stgradle.rest.call()
 
-        nexus.call()
+        stgradle.nexus.call()
     }
     else {
         str.eachWithIndex { it, i ->
@@ -36,27 +35,27 @@ def call(String miparam){
                     
                 case list[0]: 
                     
-                    build.call()
+                    stgradle.build.call()
                     break; 
                 case list[1]: 
                     
-                    build.call()
+                    stgradle.build.call()
                     break; 
                 case list[2]: 
                     
-                    sonar.call()
+                    stgradle.sonar.call()
                     break; 
                 case list[3]: 
                     
-                    run.call()
+                    stgradle.run.call()
                     break; 
                 case list[4]: 
                     
-                    rest.call()
+                    stgradle.rest.call()
                     break; 
                 case list[5]: 
                     
-                    nexus.call()
+                    stgradle.nexus.call()
                     break; 
                 default: 
                     println("The value is unknown"); 
