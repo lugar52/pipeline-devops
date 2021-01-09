@@ -17,10 +17,10 @@ def call(String miparam){
                 var1 = it
                 println "()"
                 var3 = "()"
-                println var1 + var2 + var3
+                println "esta es el stege: " + var1 + var2 + var3
 
-                varStage = "Stmaven."+it+"()" 
-                println "esta es la stege: " + varStage
+                //varStage = "Stmaven."+it+"()" 
+                // println "esta es la stege: " + varStage
         }
     }
     else {
