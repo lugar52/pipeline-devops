@@ -16,7 +16,7 @@ def call(String miparam){
     str = miparam.split(';');
     if (miparam == ";") {
         println "El valor ingresado es vacio, se procesan todos los stages: " 
-        stgradle.build("a")
+        stgradle.build()
 
         stgradle.sonar.call()
 
