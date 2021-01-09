@@ -7,9 +7,8 @@ def call(String miparam){
     // `it` is the current element, while `i` is the index
         
     String[] misStage;
-    str = miparam.split(';');
-    Instr = miparam.Trim(' ')
-    if (Instr == ";") {
+
+    if (miparam.Trim == ";") {
         println "El valor ingresado es vacio, se procesan todos los stages: " 
         list.eachWithIndex { it, i -> 
             println "Stage a procesar: " + str[i] + ' it: ' + it    
