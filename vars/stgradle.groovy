@@ -45,13 +45,17 @@ def rest(){
     }
 }
 
-// def run(){
-//     stage('Run')
-// 	{
-//         figlet env.STAGE_NAME
-//         env.TAREA =  env.STAGE_NAME
-//         "start gradlew bootRun &"
-//     }
-// }
-// 
-// return this;
+def run(){
+    stage('Run')
+	{
+        figlet env.STAGE_NAME
+        env.TAREA =  env.STAGE_NAME
+        "start gradlew bootRun &"
+    }
+}
+
+def otro() {
+    
+}
+
+return this;
