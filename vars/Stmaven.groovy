@@ -1,4 +1,4 @@
-def compile_code() {
+def compile_code(){
     stage('compile_code'){
         script {
             figlet env.STAGE_NAME
@@ -9,7 +9,7 @@ def compile_code() {
     }
 }
 
-def test_code() {
+def test_code(){
     stage('test_code'){
         script {
             figlet env.STAGE_NAME
@@ -20,7 +20,7 @@ def test_code() {
     }
 }
 
-def jar_code() {
+def jar_code(){
     stage('jar_code'){
         script {
             figlet env.STAGE_NAME
@@ -31,7 +31,7 @@ def jar_code() {
     }
 }
 
-def sonarQube() {
+def sonarQube(){
     stage('sonarQube') {
         script {
             figlet env.STAGE_NAME
@@ -45,7 +45,7 @@ def sonarQube() {
     }
 }
 
-def uploadNexus() {
+def uploadNexus(){
     stage('uploadNexus'){
         script {
             figlet env.STAGE_NAME
