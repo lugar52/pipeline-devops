@@ -14,7 +14,7 @@ def call(String miparam){
                 println "Stmaven."
                 var1 = "Stmaven."
                 println it
-                var1 = it
+                var2 = it
                 println "()"
                 var3 = "()"
                 println "esta es el stege: " + var1 + var2 + var3
