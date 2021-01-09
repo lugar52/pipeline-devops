@@ -1,6 +1,6 @@
 def call(String miparam){
 
-    println "Valor Ingresado: " figlet miparam
+    println "Valor Ingresado: " miparam
     
     def list = ['compile_code','test_code','jar_code', 'sonarQube', 'uploadNexus']
 
