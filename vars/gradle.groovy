@@ -17,15 +17,14 @@ def call(String miparam){
     str = miparam.split(';');
     if (miparam == ";") {
         println "El valor ingresado es vacio, se procesan todos los stages: " 
-        //build.call()
-        stage('Build & test') 
-        {
-            env.TAREA = env.STAGE_NAME
-            bat "gradlew clean build"
-        }
+        build.call()
+
         sonar.call()
+
         run.call()
+
         rest.call()
+        
         nexus.call()
     }
     else {
