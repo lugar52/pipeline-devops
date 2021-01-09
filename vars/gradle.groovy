@@ -47,7 +47,7 @@ def call(String miparam){
                     break; 
                 case list[3]: 
                     
-                    stgradle.run()
+                    stgradle.running()
                     break; 
                 case list[4]: 
                     

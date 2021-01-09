@@ -45,7 +45,8 @@ def rest(){
     }
 }
 
-def run(){
+
+def running(){
     stage('Run')
 	{
         figlet env.STAGE_NAME
@@ -55,7 +56,7 @@ def run(){
 }
 
 def otro() {
-    
+
 }
 
 return this;
