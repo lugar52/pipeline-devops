@@ -20,7 +20,7 @@ def call(String miparam){
 
         stgradle.sonar()
 
-        stgradle.run()
+        //stgradle.run()
 
         stgradle.rest()
 
