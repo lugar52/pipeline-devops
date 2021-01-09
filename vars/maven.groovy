@@ -8,7 +8,7 @@ def call(String miparam){
         
     String[] misStage;
     str = miparam.split(';')
-    if (miparam.Trim == ";") {
+    if (miparam == ";") {
         println "Se procesa el arreglo: list" 
         list.eachWithIndex { it, i -> 
             println "Stage a procesar: " + str[i] + ' it: ' + it    
