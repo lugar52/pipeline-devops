@@ -1,4 +1,4 @@
-def compile_code(String var){
+def compile_code(){
     stage('compile_code'){
         script {
             figlet env.STAGE_NAME

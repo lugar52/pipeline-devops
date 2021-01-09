@@ -12,14 +12,14 @@ def call(String miparam){
     if (miparam == ";") {
         println "El valor ingresado es vacio, se procesan todos los stages: " 
         list.eachWithIndex { it, i -> 
-                
+            println "Stage a procesar: " + str[i] + ' it: ' + it    
                 stgradle."${it}"()
         }
     }
     else {
         str.eachWithIndex { it, i ->
             println "Stage a procesar: " + str[i] + ' it: ' + it
-                stgradle."${it}"()
+                stmaven."${it}"()
         }
     }
 }
