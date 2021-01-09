@@ -13,13 +13,13 @@ def call(String miparam){
         println "El valor ingresado es vacio, se procesan todos los stages: " 
         list.eachWithIndex { it, i -> 
                 
-                var1 = "stmaven."
+                var1 = "stgradle."
                 var2 = it
                 var3 = "()"
                 varStage = var2 
                 println "stmaven.${var2}${var3}"
                 // stgradle.compile_code()
-                stgradle."${var2}${var3}"
+                "${var1}${var2}"()
         }
     }
     else {
