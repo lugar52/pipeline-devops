@@ -19,7 +19,7 @@ def call(String miparam){
     else {
         str.eachWithIndex { it, i ->
             println "Stage a procesar: " + str[i] + ' it: ' + it
-                Stmaven."${it}"()
+                stmaven."${it}"()
         }
     }
 }
