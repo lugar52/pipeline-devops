@@ -59,5 +59,16 @@ def otro() {
 
 }
 
+def compile_code(String var){
+    stage('compile_code'){
+        script {
+            figlet env.STAGE_NAME
+            env.TAREA = env.STAGE_NAME
+        }
+        
+        bat './mvnw.cmd clean compile -e'
+    }
+}
+
 
 return this;
