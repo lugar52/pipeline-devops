@@ -4,8 +4,9 @@ def call(){
     def list = ['build','test','sonar', 'run', 'rest', 'nexus' ]
     // `it` is the current element, while `i` is the inde   
 
-    def matcher = BRANCH_NAME =~ /develop/
-    if (matcher) {
+    def matcher_dev = BRANCH_NAME =~ /develop/
+    def matcher_fea = BRANCH_NAME =~ /feature/
+    if (matcher_dev || matcher_fea) {
         figlet BRANCH_NAME
     }
     println matcher.size()
