@@ -31,8 +31,12 @@ def rest(){
 }
 
 def nexusCI(){
-        stage('nexusCI') {
+    script {
         figlet env.STAGE_NAME
+    }
+
+    stage('nexusCI') {
+        println "Estoy nexusCi"    
     }
 }
 
