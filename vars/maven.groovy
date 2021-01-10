@@ -1,28 +1,25 @@
-def call(String miparam){
+def call(){
 
-    println "Valor Ingresado: " + miparam
+def ci = ['buildAndTest','sonar','runJar','rest','nexusCI']
+def cd = ['downloadNexus','runDownloadedJar','rest','nexusCD']
+
+    if (BRANCH_NAME ==~ /develop/ || BRANCH_NAME ==~ /feature/  ) {                                                         
+        figlet "INTEGRACION CONTINUA"
+        ci.eachWithIndex { it, i -> 
+            println "Stage a procesar: " + ci[i] + ' it: ' + it    
+            cimaven."${it}"()
+        }      
+    }
     
-    def list = ['compile_code','test_code','jar_code','sonarQube','uploadNexus']
-    // miparam = 'compile_code;test_code;jar_code;sonarQube;uploadNexus'
-
-    // `it` is the current element, while `i` is the index
+    if (matcher_rel) {
+        figlet 'ENTREGA CONTINUA'
         
-    String[] misStage;
-    str = miparam.split(';')
-    if (miparam == ";") {
-        println "Se procesa el arreglo: list" 
-        list.eachWithIndex { it, i -> 
-            println "Stage a procesar: " + list[i] + ' it: ' + it    
-                stagesMaven."${it}"()
+        cd.eachWithIndex { it, i -> 
+            println "Stage a procesar: " + cd[i] + ' it: ' + it    
+            cdmaven."${it}"()
         }
     }
-    else {
-        println "Se procesa el arreglo: str" 
-        str.eachWithIndex { it, i ->
-            println "Stage a procesar: " + str[i] + ' it: ' + it
-                stagesMaven."${it}"()
-        }
-    }
+
 }
 
 return this;
