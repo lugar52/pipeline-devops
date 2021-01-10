@@ -1,13 +1,13 @@
 def call(){
 
-    def matcher_dev = BRANCH_NAME =~ /develop/
-    def matcher_fea = BRANCH_NAME =~ /feature/
-    def matcher_rel = BRANCH_NAME =~ /release/
+    // def matcher_dev = BRANCH_NAME =~ /develop/
+    // def matcher_fea = BRANCH_NAME =~ /feature/
+    // def matcher_rel = BRANCH_NAME =~ /release/
 
-    //def list = ['buildAndTest','sonar','runJar','rest','nexusCI']
+    def list = ['buildAndTest','sonar','runJar','rest','nexusCI']
     // def cdstag = ['downloadNexus','runDownloadedJar','rest','nexusCD']
 
-     def list = ['compile_code','test_code','jar_code','sonarQube','uploadNexus']
+    //  def list = ['compile_code','test_code','jar_code','sonarQube','uploadNexus']
 
     
     
@@ -18,6 +18,11 @@ def call(){
     
  //   if (matcher_dev || matcher_fea) {
         figlet "INTEGRACION CONTINUA"
+         println "Se procesa el arreglo: list" 
+        list.eachWithIndex { it, i -> 
+            println "Stage a procesar: " + list[i] + ' it: ' + it    
+                // stagesMaven."${it}"()
+        }
 
    // }
 
