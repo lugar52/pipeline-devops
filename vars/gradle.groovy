@@ -15,7 +15,7 @@ def call(){
 
         cistag.eachWithIndex { it, i -> 
             println "Stage a procesar: " + it    
-            ci_Gradle."${it}"()
+            // ci_Gradle."${it}"()
         }
     }
 
