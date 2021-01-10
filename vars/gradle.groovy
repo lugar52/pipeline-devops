@@ -17,7 +17,7 @@ def call(){
     def text = BRANCH_NAME
     def m = text =~ /develop/  
    
-    if (m) {                                                         
+    if (m.find(0)) {                                                         
         figlet "INTEGRACION CONTINUA"
         
         list.eachWithIndex { it, i -> 
