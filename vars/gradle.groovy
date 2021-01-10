@@ -1,7 +1,9 @@
 def call(){
 
-    def cistag = ['buildAndTest','sonar', 'runJar', 'rest', 'nexusCI' ]
+    def cistag = ['buildAndTest','sonar','runJar','rest','nexusCI']
     def cdstag = ['downloadNexus','runDownloadedJar','rest','nexusCD']
+
+    
     
     // `it` is the current element, while `i` is the inde   
 
@@ -14,7 +16,7 @@ def call(){
         figlet 'INTEGRACION CONTINUA'
 
         cistag.eachWithIndex { it, i -> 
-            println "Stage a procesar: " + it    
+            println "Stage a procesar: " + cistag[i]    
             // ci_Gradle."${it}"()
         }
     }
