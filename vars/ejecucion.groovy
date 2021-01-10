@@ -3,10 +3,10 @@ def call(){
   pipeline {
     agent any
 
-    parameters { 
-      choice(name: 'buildtool', choices: ['gradle', 'maven'], description: '')
-      string(name: 'stage', defaultValue: '', description: 'taller devops') 
-      }
+    // parameters { 
+    //   choice(name: 'buildtool', choices: ['gradle', 'maven'], description: '')
+    //   string(name: 'stage', defaultValue: '', description: 'taller devops') 
+    //   }
      
 
     stages 
@@ -19,15 +19,15 @@ def call(){
                 {
                   figlet "set"
                   bat 'set'
-                  println 'Herramientas de ejecucion seleccionadas: ' + params.buildtool
+                 // println 'Herramientas de ejecucion seleccionadas: ' + params.buildtool
                   //println 'Valor param.stage: ' + params.stage
                   
-
-                    if (params.buildtool == 'gradle') {
-                      gradle.call()
-                    } else {
-                      maven.call()
-                    }
+                    gradle.call()
+                    // if (params.buildtool == 'gradle') {
+                    //   gradle.call()
+                    // } else {
+                    //   maven.call()
+                    // }
 
                   
 
@@ -39,7 +39,7 @@ def call(){
 
         success {
             script {
-                env.SUMMARY = "'[Luis Garrido] ${env.JOB_NAME} [${params.buildtool}] Ejecucion exitosa'"
+                env.SUMMARY = "'[Luis Garrido] ${env.JOB_NAME}  Ejecucion exitosa'"
             }
             println "Este es el mensaje " + env.SUMMARY
             slackSend(teamDomain: 'luisgarrido', tokenCredentialId: 'Slack_tokens', message: env.SUMMARY)
@@ -48,7 +48,7 @@ def call(){
         failure {
                     
             script {
-                env.SUMMARY = "'[Luis Garrido] ${env.JOB_NAME} [${params.buildtool}] 'Ejecución fallida en stage' [${env.TAREA}]'"
+                env.SUMMARY = "'[Luis Garrido] ${env.JOB_NAME} 'Ejecución fallida en stage' [${env.TAREA}]'"
             }
 
             println env.TAREA
