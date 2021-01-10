@@ -4,10 +4,11 @@ def call(){
     def list = ['build','test','sonar', 'run', 'rest', 'nexus' ]
     // `it` is the current element, while `i` is the inde   
 
-    def matcher = BRANCH_NAME =~ /(\develop)/
+    def matcher = BRANCH_NAME =~ /(\develop+)/
     if (matcher) {
         figlet BRANCH_NAME
     }
+    println matcher.size()
     
 
 
