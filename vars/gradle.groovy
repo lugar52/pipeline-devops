@@ -7,21 +7,13 @@ def call(){
     def list = ['buildAndTest','sonar','runJar','rest','nexusCI']
     // def cdstag = ['downloadNexus','runDownloadedJar','rest','nexusCD']
 
-    //  def list = ['compile_code','test_code','jar_code','sonarQube','uploadNexus']
-
-    
-    
-    // `it` is the current element, while `i` is the inde   
-
-
-    // def text = BRANCH_NAME
-    // def m = text =~ /develop/  
-
-
-    def text = "some text to match"
-    
-    if (BRANCH_NAME ==~ /develop/ ) {                                                         
+    if (BRANCH_NAME ==~ /develop/ || BRANCH_NAME ==~ /feature/  ) {                                                         
         figlet "INTEGRACION CONTINUA"
+        list.eachWithIndex { it, i -> 
+            println "Stage a procesar: " + list[i] + ' it: ' + it    
+        // stagesMaven."${it}"()
+        }
+
         
     }
     else {
@@ -31,10 +23,6 @@ def call(){
     // if (m.find(0)) {                                                         
     //     
     //     
-    //     list.eachWithIndex { it, i -> 
-    //         println "Stage a procesar: " + list[i] + ' it: ' + it    
-    //     // stagesMaven."${it}"()
-    //     }
     //     
     // }
     
