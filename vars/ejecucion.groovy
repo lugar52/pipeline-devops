@@ -20,11 +20,11 @@ def call(){
                   
                    bat 'set'
                                    
-                    // gradle.call()
+                     gradle.call()
                     // if (params.buildtool == 'gradle') {
                     //   gradle.call()
                     // } else {
-                       maven.call()
+                    //    maven.call()
                     // }
 
                   

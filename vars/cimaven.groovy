@@ -31,12 +31,14 @@ def rest(){
 }
 
 def nexusci(){
+    figlet env.STAGE_NAME
     stage('nexusci') {
         println "Estoy nexusCi"    
     }
 }
 
 def otro(){
+
     stage('otro') {
         figlet env.STAGE_NAME
     }
