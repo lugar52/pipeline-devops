@@ -17,7 +17,7 @@ def call(){
 
          list.eachWithIndex { it, i -> 
             println "Stage a procesar: " + list[i] + ' it: ' + it    
-                stagesMaven."${it}"()
+               // stagesMaven."${it}"()
         }
     }
 
