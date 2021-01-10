@@ -1,6 +1,6 @@
 def call(){
 
-    def cistag = ['buildAndTest','sonar','runJar','rest','nexusCI']
+    def list = ['buildAndTest','sonar','runJar','rest','nexusCI']
     def cdstag = ['downloadNexus','runDownloadedJar','rest','nexusCD']
 
     
@@ -15,9 +15,9 @@ def call(){
     if (matcher_dev || matcher_fea) {
         figlet 'INTEGRACION CONTINUA'
 
-        cistag.eachWithIndex { it, i -> 
-            println "Stage a procesar: "
-            // ci_Gradle."${it}"()
+         list.eachWithIndex { it, i -> 
+            println "Stage a procesar: " + list[i] + ' it: ' + it    
+                stagesMaven."${it}"()
         }
     }
 
