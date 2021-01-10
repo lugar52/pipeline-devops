@@ -1,6 +1,7 @@
 def call(){
 
-    
+    def cistag = ['buildAndTest','sonar', 'runJar', 'rest', 'nexusCI' ]
+    def cdstag = ['downloadNexus','runDownloadedJar','rest','nexusCD']
     
     // `it` is the current element, while `i` is the inde   
 
@@ -11,9 +12,8 @@ def call(){
     
     if (matcher_dev || matcher_fea) {
         figlet 'INTEGRACION CONTINUA'
-        def list = ['buildAndTest','sonar', 'runJar', 'rest', 'nexusCI' ]
 
-        list.eachWithIndex { it, i -> 
+        cistag.eachWithIndex { it, i -> 
             println "Stage a procesar: " + it    
             ci_Gradle."${it}"()
         }
@@ -23,9 +23,7 @@ def call(){
     if (matcher_rel) {
         figlet 'ENTREGA CONTINUA'
         
-        def list = ['downloadNexus','runDownloadedJar','rest','nexusCD']
-
-        list.eachWithIndex { it, i -> 
+        cdstag.eachWithIndex { it, i -> 
             println "Stage a procesar: " + it    
             cd_gradle."${it}"()
         }

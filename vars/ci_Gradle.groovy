@@ -1,5 +1,3 @@
-// 'buildAndTest','sonar', 'runJar', 'rest', 'nexusCI' 
-
 def buildAndTest(){ 
     stage('buildAndTest') 
 	{
