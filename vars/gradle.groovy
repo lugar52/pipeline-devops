@@ -1,8 +1,8 @@
 def call(){
 
-    // def matcher_dev = BRANCH_NAME =~ /develop/
-    // def matcher_fea = BRANCH_NAME =~ /feature/
-    // def matcher_rel = BRANCH_NAME =~ /release/
+    def matcher_dev = BRANCH_NAME =~ /develop/
+    def matcher_fea = BRANCH_NAME =~ /feature/
+    def matcher_rel = BRANCH_NAME =~ /release/
 
     def list = ['buildAndTest','sonar','runJar','rest','nexusCI']
     // def cdstag = ['downloadNexus','runDownloadedJar','rest','nexusCD']
@@ -20,7 +20,7 @@ def call(){
         figlet "INTEGRACION CONTINUA"
 
          list.eachWithIndex { it, i -> 
-            println "Stage a procesar: "
+            println "Stage a procesar: " + str[i] + ' it: ' + it
                
             }
    // }
