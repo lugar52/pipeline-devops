@@ -79,7 +79,7 @@ def rest(){
 
 def otro(){
     stage('otro'){
-        println "Fin Integración continua"
+        figlet "FIN"
     }
 }
 
