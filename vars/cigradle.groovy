@@ -44,8 +44,8 @@ def rest(){
     }
 }
 
-def nexus(){ 
-        stage('nexus') 
+def nexusCI(){ 
+        stage('nexusCI') 
 	{
         figlet env.STAGE_NAME
         env.TAREA =  env.STAGE_NAME
