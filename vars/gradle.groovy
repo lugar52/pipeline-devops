@@ -14,8 +14,8 @@ def call(){
     // `it` is the current element, while `i` is the inde   
 
 
-    def text = "develop"
-    def m = BRANCH_NAME =~ /develop/                                           
+    def text = BRANCH_NAME
+    def m = text =~ /develop/                                           
     assert m instanceof Matcher                                       
     if (m) {                                                         
         figlet "INTEGRACION CONTINUA"
