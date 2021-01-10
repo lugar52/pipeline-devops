@@ -14,14 +14,14 @@ def call(){
     def matcher_rel = BRANCH_NAME =~ /release/
     
     
-    if (matcher_dev || matcher_fea) {
+ //   if (matcher_dev || matcher_fea) {
         figlet "INTEGRACION CONTINUA"
 
          list.eachWithIndex { it, i -> 
-            println "Stage a procesar: " + i + ' it: ' + it    
+            println "Stage a procesar: " + list[i] + ' it: ' + it   
                
         }
-    }
+   // }
 
 
     if (matcher_rel) {
