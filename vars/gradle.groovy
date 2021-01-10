@@ -5,7 +5,7 @@ def call(){
     // `it` is the current element, while `i` is the inde   
 
     def digitPattern = ~/\develop/
-    def matcher = BRANCH_NAME =~ /\develop/ 
+    def matcher = BRANCH_NAME =~ /\"develop"/ 
     if (!matcher) {
         figlet BRANCH_NAME
     }
