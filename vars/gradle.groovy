@@ -6,7 +6,7 @@ def call(){
 
     def digitPattern = ~/\develop/
     def matcher = BRANCH_NAME =~ /\develop/ 
-    if (matcher) {
+    if (!matcher) {
         figlet BRANCH_NAME
     }
     
