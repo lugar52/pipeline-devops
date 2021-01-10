@@ -21,7 +21,7 @@ def call(){
     def text = "some text to match"
     def m = text =~ /match/
     
-    if (BRANCH_NAME =~ /match/ ) {                                                         
+    if (BRANCH_NAME =~ /develop/ ) {                                                         
         figlet "INTEGRACION CONTINUA"
         
     }
