@@ -1,16 +1,10 @@
-/*
-	forma de invocación de método call:
-	def ejecucion = load 'script.groovy'
-	ejecucion.call()
-*/
-
 def call){
 
     
     def list = ['build','test','sonar', 'run', 'rest', 'nexus' ]
     // `it` is the current element, while `i` is the inde   
     if (BRANCH_NAME =~ "develop" || BRANCH_NAME =~ "feature" ) {
-        fliglet BRANCH_NAME
+        figlet BRANCH_NAME
     }
     
 
