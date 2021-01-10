@@ -16,7 +16,7 @@ def call(){
         figlet 'INTEGRACION CONTINUA'
 
         cistag.eachWithIndex { it, i -> 
-            println "Stage a procesar: " + cistag[i]    
+            println "Stage a procesar: "
             // ci_Gradle."${it}"()
         }
     }
