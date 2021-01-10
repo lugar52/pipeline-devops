@@ -20,13 +20,8 @@ def nexusCI(){
 def sonar(){ 
     stage('sonar') 
     {
-        script 
-        {
-            figlet env.STAGE_NAME
-            env.TAREA = env.STAGE_NAME
-        }
-        
-            // Coresponde a lo que se configuro en tool conffiguration
+        figlet env.STAGE_NAME
+        // Coresponde a lo que se configuro en tool conffiguration
         def scannerHome = tool 'Sonar-Scanner';
             
         withSonarQubeEnv('Sonar-Server') 
@@ -54,11 +49,10 @@ def rest(){
     }
 }
 
-
-
 def otro(){
+    stage('otro'){
 
+    }
 }
-
 
 return this;
