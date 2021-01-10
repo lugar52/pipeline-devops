@@ -15,8 +15,8 @@ def call(){
                 try {
                     "${it}"()
                 }
-                catch {
-                    error "Error en el Stage: ${it} ${e}" 
+                catch(Exception e) {
+                    error "Error en el Stage: ${it}" 
                 }
             }
         }      
