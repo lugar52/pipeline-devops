@@ -20,7 +20,7 @@ def call(){
         figlet "INTEGRACION CONTINUA"
 
          list.eachWithIndex { it, i -> 
-            println "Stage a procesar: " + list[i] + ' it: ' + it
+            println "Stage a procesar: " + i + ' it: ' + it
                
             }
    // }
