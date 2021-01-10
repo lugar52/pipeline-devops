@@ -19,9 +19,9 @@ def call(){
 
 
     def text = "some text to match"
-    def m = text =~ /match/                                           
-    assert m instanceof Matcher                                       
-    if (m) {                                                         
+    def m = text =~ /match/
+    
+    if (BRANCH_NAME =~ /match/ ) {                                                         
         figlet "INTEGRACION CONTINUA"
         
     }
