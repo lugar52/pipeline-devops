@@ -4,28 +4,25 @@
 	ejecucion.call()
 */
 
-def call(String miparam){
+def call){
 
-    println "Valor Ingresado: " + miparam
+    
     def list = ['build','test','sonar', 'run', 'rest', 'nexus' ]
-    // miparam = 'build;test;sonar;run;rest;nexus'
-    // `it` is the current element, while `i` is the index
+    // `it` is the current element, while `i` is the inde   
+    if (BRANCH_NAME =~ "develop" || BRANCH_NAME =~ "feature" ) {
+        fliglet BRANCH_NAME
+    }
+    
+
 
     
-    String[] misStage;
-    str = miparam.split(';');
     
-    if (miparam == ";") {
-        println "El valor ingresado es vacio, se procesan todos los stages: " 
-        stagesGradle.build()
-
-        stagesGradle.sonar()
-
-        stagesGradle.running()
-
-        stagesGradle.rest()
-
-        stagesGradle.nexus()
+    if (BRANCH_NAME == "develop" || BRANCH_NAME == "feature" ) {
+        println "Se procesa el arreglo: list" 
+        list.eachWithIndex { it, i -> 
+            println "Stage a procesar: " + list[i] + ' it: ' + it    
+                stagesGradle."${it}"()
+        }
     }
     else {
         str.eachWithIndex { it, i ->

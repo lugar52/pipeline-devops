@@ -24,9 +24,9 @@ def call(){
                   
 
                     if (params.buildtool == 'gradle') {
-                      gradle.call(params.stage + ';')
+                      gradle.call()
                     } else {
-                      maven.call(params.stage + ';')
+                      maven.call()
                     }
 
                   
