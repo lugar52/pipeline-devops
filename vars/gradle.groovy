@@ -19,10 +19,6 @@ def call(){
  //   if (matcher_dev || matcher_fea) {
         figlet "INTEGRACION CONTINUA"
 
-         list.eachWithIndex { it, i -> 
-            println "Stage a procesar: " + i + ' it: ' + it
-               
-            }
    // }
 
 
