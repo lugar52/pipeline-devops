@@ -3,8 +3,11 @@ def call(){
   pipeline {
     agent any
 
-    parameters { choice(name: 'buildtool', choices: ['gradle', 'maven'], description: '') }
-    // string(name: 'stage', defaultValue: '', descripcion: 'taller devops')
+    parameters { 
+      choice(name: 'buildtool', choices: ['gradle', 'maven'], description: '') 
+      string(name: 'stage', defaultValue: '', descripcion: 'taller devops') 
+      }
+     
 
     stages 
     {
