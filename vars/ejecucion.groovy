@@ -4,8 +4,8 @@ def call(){
     agent any
 
     parameters { 
-      choice(name: 'buildtool', choices: ['gradle', 'maven'], description: ''),
-      string(name: 'stage', defaultValue: '', descripcion: 'taller devops') 
+      choice(name: 'buildtool', choices: ['gradle', 'maven'], description: '')
+      string(name: 'stage', defaultValue: '', description: 'taller devops') 
       }
      
 
