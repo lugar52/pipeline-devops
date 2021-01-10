@@ -13,29 +13,25 @@ def buildAndTest(){
 }
 
 def sonar(){
-    stage('sonar') {
+    stage('sonar'){
         figlet env.STAGE_NAME
     }
 }
 
 def runJar(){
-        stage('runJar') {
+    stage('runJar'){
         figlet env.STAGE_NAME
     }
 }
 
 def rest(){
-        stage('rest') {
+    stage('rest'){
         figlet env.STAGE_NAME
     }
 }
 
-def uploadNexus(){
-    script {
-        figlet env.STAGE_NAME
-    }
-
-    stage('uploadNexus') {
+def nexusci(){
+    stage('nexusci') {
         println "Estoy nexusCi"    
     }
 }
