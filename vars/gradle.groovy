@@ -1,7 +1,9 @@
 def call(){
 
-    def list = ['buildAndTest','sonar','runJar','rest','nexusCI']
-    def cdstag = ['downloadNexus','runDownloadedJar','rest','nexusCD']
+    // def list = ['buildAndTest','sonar','runJar','rest','nexusCI']
+    // def cdstag = ['downloadNexus','runDownloadedJar','rest','nexusCD']
+
+    def list = ['compile_code','test_code','jar_code','sonarQube','uploadNexus']
 
     
     
