@@ -18,20 +18,20 @@ def call(){
         figlet "INTEGRACION CONTINUA"
 
          list.eachWithIndex { it, i -> 
-            println "Stage a procesar: " + list[i] + ' it: ' + it   
+            println "Stage a procesar: "
                
         }
    // }
 
 
-    if (matcher_rel) {
-        figlet 'ENTREGA CONTINUA'
-        
-        cdstag.eachWithIndex { it, i -> 
-            println "Stage a procesar: " + it    
-            cd_gradle."${it}"()
-        }
-    }
+    // if (matcher_rel) {
+    //     figlet 'ENTREGA CONTINUA'
+    //     
+    //     cdstag.eachWithIndex { it, i -> 
+    //         println "Stage a procesar: " + it    
+    //         cd_gradle."${it}"()
+    //     }
+    // }
 
 }
 
