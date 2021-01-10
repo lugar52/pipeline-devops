@@ -14,15 +14,21 @@ def call(){
     // `it` is the current element, while `i` is the inde   
 
 
-    
-    
- //   if (matcher_dev || matcher_fea) {
+    def text = "develop"
+    def m = BRANCH_NAME =~ /develop/                                           
+    assert m instanceof Matcher                                       
+    if (m) {                                                         
         figlet "INTEGRACION CONTINUA"
-         println "Se procesa el arreglo: list" 
+        
         list.eachWithIndex { it, i -> 
             println "Stage a procesar: " + list[i] + ' it: ' + it    
-                // stagesMaven."${it}"()
+        // stagesMaven."${it}"()
         }
+        
+    }
+    
+ //   if (matcher_dev || matcher_fea) {
+
 
    // }
 
