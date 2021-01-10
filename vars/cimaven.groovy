@@ -45,3 +45,5 @@ def otro(){
         figlet env.STAGE_NAME
     }
 }
+
+return this;
