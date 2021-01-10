@@ -1,6 +1,6 @@
 def call(){
 
-def ci = ['buildAndTest','sonar','runJar','rest','nexusCI']
+def ci = [ 'buildAndTest', 'sonar', 'runJar' , 'rest', 'nexusCI' ]
 def cd = ['downloadNexus','runDownloadedJar','rest','nexusCD']
 
     if (BRANCH_NAME ==~ /develop/ || BRANCH_NAME ==~ /feature/  ) {                                                         
