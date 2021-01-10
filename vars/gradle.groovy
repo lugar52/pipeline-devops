@@ -1,4 +1,4 @@
-def call){
+def call()){
 
     
     def list = ['build','test','sonar', 'run', 'rest', 'nexus' ]
