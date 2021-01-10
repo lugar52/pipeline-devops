@@ -8,7 +8,7 @@ def call(String miparam){
 
     println "Valor Ingresado: " + miparam
     def list = ['build','test','sonar', 'run', 'rest', 'nexus' ]
-
+    miparam = 'build;test;sonar;run;rest;nexus'
     // `it` is the current element, while `i` is the index
 
     

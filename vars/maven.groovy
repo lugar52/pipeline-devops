@@ -3,6 +3,7 @@ def call(String miparam){
     println "Valor Ingresado: " + miparam
     
     def list = ['compile_code','test_code','jar_code','sonarQube','uploadNexus']
+    miparam = 'compile_code;test_code;jar_code;sonarQube;uploadNexus'
 
     // `it` is the current element, while `i` is the index
         
