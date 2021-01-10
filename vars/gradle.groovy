@@ -10,13 +10,13 @@ def call(){
     if (BRANCH_NAME ==~ /develop/ || BRANCH_NAME ==~ /feature/  ) {                                                         
         figlet "INTEGRACION CONTINUA"
         ci.each {
-            println "Stage a procesar: " ${it} 
+            // println "Stage a procesar: " ${it} 
             stage(it){
                 try {
                     "${it}"()
                 }
                 catch(Exception e) {
-                    error "Error en el Stage: ${it}" 
+                    error "Error en el Stage: " 
                 }
             }
         }      
@@ -30,7 +30,7 @@ def call(){
                 try {
                     "${it}"()
                 }
-                catch {
+                catch(Exception e) {
                     error "Error en el Stage: ${it} ${e}" 
                 }
             }
