@@ -4,7 +4,7 @@ def call(){
     // def matcher_fea = BRANCH_NAME =~ /feature/
     // def matcher_rel = BRANCH_NAME =~ /release/
 
-    def ci = ['buildAndTest','sonar','runJar','rest','nexusCI']
+    def ci = ['buildAndTest','sonar','runJar','rest','uploadNexus']
     def cd = ['downloadNexus','runDownloadedJar','rest','nexusCD']
 
     if (BRANCH_NAME ==~ /develop/ || BRANCH_NAME ==~ /feature/  ) {                                                         

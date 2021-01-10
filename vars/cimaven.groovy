@@ -30,12 +30,12 @@ def rest(){
     }
 }
 
-def nexusCI(){
+def uploadNexus(){
     script {
         figlet env.STAGE_NAME
     }
 
-    stage('nexusCI') {
+    stage('uploadNexus') {
         println "Estoy nexusCi"    
     }
 }
