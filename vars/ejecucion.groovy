@@ -17,11 +17,9 @@ def call(){
             {
                 script 
                 {
-                  // figlet "set"
-                  // bat 'set'
-                 // println 'Herramientas de ejecucion seleccionadas: ' + params.buildtool
-                  //println 'Valor param.stage: ' + params.stage
                   
+                   bat 'set'
+                                   
                     gradle.call()
                     // if (params.buildtool == 'gradle') {
                     //   gradle.call()
