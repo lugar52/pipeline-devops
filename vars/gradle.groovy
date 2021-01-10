@@ -14,18 +14,30 @@ def call(){
     // `it` is the current element, while `i` is the inde   
 
 
-    def text = BRANCH_NAME
-    def m = text =~ /develop/  
-   
-    if (m.find(0)) {                                                         
+    // def text = BRANCH_NAME
+    // def m = text =~ /develop/  
+
+
+    def text = "some text to match"
+    def m = text =~ /match/                                           
+    assert m instanceof Matcher                                       
+    if (m) {                                                         
         figlet "INTEGRACION CONTINUA"
         
-        list.eachWithIndex { it, i -> 
-            println "Stage a procesar: " + list[i] + ' it: ' + it    
-        // stagesMaven."${it}"()
-        }
-        
     }
+    else {
+        throw new RuntimeException("Oops, text not found!")
+    }
+   
+    // if (m.find(0)) {                                                         
+    //     
+    //     
+    //     list.eachWithIndex { it, i -> 
+    //         println "Stage a procesar: " + list[i] + ' it: ' + it    
+    //     // stagesMaven."${it}"()
+    //     }
+    //     
+    // }
     
  //   if (matcher_dev || matcher_fea) {
 
