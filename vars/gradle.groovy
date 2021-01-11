@@ -24,11 +24,11 @@ def call(){
     
     if (BRANCH_NAME ==~ /release/ ) {
         figlet "ENTREGA CONTINUA"
-        
         cd.each {
+            println "Stage a procesar: " ${it} 
             stage(it){
                 try {
-                    figlet it
+                    
                     "${it}"()
                 }
                 catch(Exception e) {
@@ -75,18 +75,10 @@ def rest(){
 }
 
 def otro(){
-    stage('otro'){
-        figlet "FIN"
-    }
+    figlet "FIN"
 }
 
-//////////////////////////////////////////
-
-
-// 'downloadNexus','runDownloadedJar','rest','nexusCD'
-
-def downloadNexus(){ 
-    
+def downloadNexus(){
     "curl -X GET -u admin:Vicente$$24 http://localhost:8081/repository/test-nexus/com/devopsusach2020/DevOpsUsach2020/0.0.1/DevOpsUsach2020-0.0.1.jar -O"
 }
 
