@@ -78,8 +78,9 @@ def otro(){
     figlet "FIN"
 }
 
+
 def downloadNexus(){
-    "curl -X GET -u admin:Vicente$$24 http://localhost:8081/repository/test-nexus/com/devopsusach2020/DevOpsUsach2020/0.0.1/DevOpsUsach2020-0.0.1.jar -O"
+    "curl -X GET -u admin:password http://localhost:8081/repository/test-nexus/com/devopsusach2020/DevOpsUsach2020/0.0.1/DevOpsUsach2020-0.0.1.jar -O"
 }
 
 def runDownloadedJar(){
