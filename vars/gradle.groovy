@@ -7,7 +7,7 @@ def call(){
     def ci = ['buildAndTest','sonar','runJar','rest','nexusCI', 'otro' ]
     def cd = ['downloadNexus','runDownloadedJar','rest','nexusCD', 'otro' ]
 
-    if (BRANCH_NAME ==~ /develop/ || BRANCH_NAME ==~ /feature/  ) {                                                         
+    if (GIT_BRANCH ==~ /develop/ || GIT_BRANCH ==~ /feature/  ) {                                                         
         figlet "INTEGRACION CONTINUA"
         ci.each {
             // println "Stage a procesar: " ${it} 
