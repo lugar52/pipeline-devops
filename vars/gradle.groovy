@@ -22,10 +22,11 @@ def call(){
         }      
     }
     
+    figlet BRANCH_NAME
     if (BRANCH_NAME ==~ /release/ ) {
         figlet "ENTREGA CONTINUA"
         cd.each {
-            println "Stage a procesar: " ${it} 
+            //println "Stage a procesar: " ${it} 
             stage(it){
                 try {
                     
