@@ -22,8 +22,9 @@ def call(){
         }      
     }
     
-    figlet GIT_BRANCH
-    if (GIT_BRANCH ==~ /release/ ) {
+    def mbr = GIT_LOCAL_BRANCH.split('-')
+    figlet mbr
+    if (mbr(0)) == "release" ) {
         figlet "ENTREGA CONTINUA"
         cd.each {
             //println "Stage a procesar: " ${it} 
