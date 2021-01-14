@@ -24,6 +24,8 @@ def sonar(){
             bat "${scannerHome}\\bin\\sonar-scanner -Dsonar.projectKey=ejemplo-gradle -Dsonar.java.binaries=build"
         }
     }
+	timeout(time: 10, unit: 'MINUTES') {
+	waitForQualityGate abortPipeline: qualityGateValidation(waitForQualityGate())
 }
 
 def nexus(){ 
@@ -57,6 +59,19 @@ def running(){
 
 def otro() {
 
+}
+	
+def qualityGateValidation(qg) {
+     if(qg.status != 'OK') {
+	emailext body: "La Cobertura del escaneo es menor a 70%", subject: "Error Sonar Scan,
+
+	Quality Gate", to: "${EMAIL_ADDRESS}"
+	 	return true
+	  }
+		 emailext body: "La Cobertura del escaneo es mas del 70% - SUCCESS", subject: "Info -
+
+	Ejecucion pipeline", to: "${EMAIL_ADDRESS}"
+	     return false
 }
 
 
