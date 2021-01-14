@@ -25,7 +25,11 @@ def sonar(){
         }
     }
 	timeout(time: 10, unit: 'MINUTES') {
-	waitForQualityGate abortPipeline: qualityGateValidation(waitForQualityGate())
+		def qg = waitForQualityGate()
+		if (qg.status != 'OK') {
+			error "Pipeline aborted due to quality gate faliure: ${qg.status}"
+		}
+	// waitForQualityGate abortPipeline: qualityGateValidation(waitForQualityGate())
 	}
 }
 
