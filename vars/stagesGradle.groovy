@@ -27,10 +27,20 @@ def sonar(){
 	timeout(time: 10, unit: 'MINUTES') {
 		def qg = waitForQualityGate()
 	
-		if (qg.status != 'OK') {
-			error "Pipeline aborted due to quality gate faliure: ${qg.status}"
-		}
-	   waitForQualityGate abortPipeline: qualityGateValidation(waitForQualityGate())
+		if (flow.canRunStage(StepEnum.SONAR)) {
+        stage(StepEnum.SONAR.getNombre()) {
+            env.FAILED_STAGE = StepEnum.SONAR
+            withSonarQubeEnv(installationName: 'sonar') {
+                sh './mvnw org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar'
+            }
+        }
+        stage("Quality gate") {
+            env.FAILED_STAGE = "$StepEnum.SONAR Quality gate"
+            steps {
+                waitForQualityGate abortPipeline: true
+            }
+        }
+    }
 	}
 }
 
