@@ -75,7 +75,7 @@ def otro() {
 }
 	
 def qualityGateValidation(qg) {
-     if(qg.status != 'OK') {
+     if(qg.status != true ) {
 	emailext body: "La Cobertura del escaneo es menor a 70%", subject: "Error Sonar Scan,Quality Gate", to: "${EMAIL_ADDRESS}"
 	 	return true
 	  }
