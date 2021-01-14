@@ -26,12 +26,20 @@ def sonar(){
     }
 	timeout(time: 10, unit: 'MINUTES') {
 		def qg = waitForQualityGate()
+	
 		if (qg.status != 'OK') {
 			error "Pipeline aborted due to quality gate faliure: ${qg.status}"
 		}
-	// waitForQualityGate abortPipeline: qualityGateValidation(waitForQualityGate())
+	   waitForQualityGate abortPipeline: qualityGateValidation(waitForQualityGate())
 	}
 }
+
+stage("Quality gate") {
+            env.FAILED_STAGE = "$StepEnum.SONAR Quality gate"
+            steps {
+                waitForQualityGate abortPipeline: true
+            }
+        }
 
 def nexus(){ 
         stage('Nexus') 
