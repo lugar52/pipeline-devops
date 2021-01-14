@@ -26,6 +26,7 @@ def sonar(){
     }
 	timeout(time: 10, unit: 'MINUTES') {
 	waitForQualityGate abortPipeline: qualityGateValidation(waitForQualityGate())
+	}
 }
 
 def nexus(){ 
