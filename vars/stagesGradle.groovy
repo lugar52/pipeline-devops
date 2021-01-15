@@ -11,7 +11,7 @@ def sonar()
 {
 	stage('sonar') 
 	{
-            env.FAILED_STAGE = StepEnum.SONAR
+            //env.FAILED_STAGE = StepEnum.SONAR
             withSonarQubeEnv(installationName: 'Sonar-Server') 
 		{
                 	bat "${scannerHome}\\bin\\sonar-scanner -Dsonar.projectKey=ejemplo-gradle -Dsonar.java.binaries=build"
@@ -20,7 +20,7 @@ def sonar()
         }
         stage("Quality gate") 
 	{
-            env.FAILED_STAGE = "$StepEnum.SONAR Quality gate"
+            //env.FAILED_STAGE = "$StepEnum.SONAR Quality gate"
             waitForQualityGate abortPipeline: true
         }
 }
