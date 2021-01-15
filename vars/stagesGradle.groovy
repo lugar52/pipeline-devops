@@ -7,47 +7,16 @@ def build(){
     }
 }
 
-def sonar(){ 
-    stage('SonarQube analysis') 
-    {
-        script 
-        {
-            figlet env.STAGE_NAME
-            env.TAREA = env.STAGE_NAME
+stage(StepEnum.SONAR.getNombre()) {
+            env.FAILED_STAGE = StepEnum.SONAR
+            withSonarQubeEnv(installationName: 'sonar') {
+                sh './mvnw org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar'
+            }
         }
-        
-            // Coresponde a lo que se configuro en tool conffiguration
-        def scannerHome = tool 'Sonar-Scanner';
-            
-        withSonarQubeEnv('Sonar-Server') 
-        { 
-            bat "${scannerHome}\\bin\\sonar-scanner -Dsonar.projectKey=ejemplo-gradle -Dsonar.java.binaries=build"
+        stage("Quality gate") {
+            env.FAILED_STAGE = "$StepEnum.SONAR Quality gate"
+            waitForQualityGate abortPipeline: true
         }
-    }
-	timeout(time: 10, unit: 'MINUTES') 
-	{
-		def qg = waitForQualityGate()
-	
-		if (flow.canRunStage(StepEnum.SONAR)) 
-		{
-        		stage(StepEnum.SONAR.getNombre()) 
-			{
-				env.FAILED_STAGE = StepEnum.SONAR
-				withSonarQubeEnv(installationName: 'sonar') 
-				{
-                			sh './mvnw org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar'
-            			}
-        		}
-        		stage("Quality gate") 
-			{
-            			env.FAILED_STAGE = "$StepEnum.SONAR Quality gate"
-            		steps {
-                		waitForQualityGate abortPipeline: true
-            			}
-        		}
-    		}
-	}
-}
 
 stage("Quality gate") {
             env.FAILED_STAGE = "$StepEnum.SONAR Quality gate"
