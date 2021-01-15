@@ -12,9 +12,9 @@ def sonar()
 	stage('sonar') 
 	{
             env.FAILED_STAGE = StepEnum.SONAR
-            withSonarQubeEnv(installationName: 'sonar') 
+            withSonarQubeEnv(installationName: 'Sonar-Server') 
 		{
-                	sh './mvnw org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar'
+                	bat "${scannerHome}\\bin\\sonar-scanner -Dsonar.projectKey=ejemplo-gradle -Dsonar.java.binaries=build"
             	}
 		
         }
