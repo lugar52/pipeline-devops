@@ -24,23 +24,28 @@ def sonar(){
             bat "${scannerHome}\\bin\\sonar-scanner -Dsonar.projectKey=ejemplo-gradle -Dsonar.java.binaries=build"
         }
     }
-	timeout(time: 10, unit: 'MINUTES') {
+	timeout(time: 10, unit: 'MINUTES') 
+	{
 		def qg = waitForQualityGate()
 	
-		if (flow.canRunStage(StepEnum.SONAR)) {
-        stage(StepEnum.SONAR.getNombre()) {
-            env.FAILED_STAGE = StepEnum.SONAR
-            withSonarQubeEnv(installationName: 'sonar') {
-                sh './mvnw org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar'
-            }
-        }
-        stage("Quality gate") {
-            env.FAILED_STAGE = "$StepEnum.SONAR Quality gate"
-            steps {
-                waitForQualityGate abortPipeline: true
-            }
-        }
-    }
+		if (flow.canRunStage(StepEnum.SONAR)) 
+		{
+        		stage(StepEnum.SONAR.getNombre()) 
+			{
+				env.FAILED_STAGE = StepEnum.SONAR
+				withSonarQubeEnv(installationName: 'sonar') 
+				{
+                			sh './mvnw org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar'
+            			}
+        		}
+        		stage("Quality gate") 
+			{
+            			env.FAILED_STAGE = "$StepEnum.SONAR Quality gate"
+            		steps {
+                		waitForQualityGate abortPipeline: true
+            			}
+        		}
+    		}
 	}
 }
 
