@@ -18,12 +18,12 @@ def sonar()
         	bat "${scannerHome}\\bin\\sonar-scanner -Dsonar.projectKey=ejemplo-gradle -Dsonar.java.binaries=build"
     	}
 		
-        }
-        stage("Quality gate") 
-	{
-            //env.FAILED_STAGE = "$StepEnum.SONAR Quality gate"
-            waitForQualityGate abortPipeline: true
-        }
+//        }
+//        stage("Quality gate") 
+//	{
+//            //env.FAILED_STAGE = "$StepEnum.SONAR Quality gate"
+//            waitForQualityGate abortPipeline: true
+//        }
 }
 
 stage("Quality gate") {
